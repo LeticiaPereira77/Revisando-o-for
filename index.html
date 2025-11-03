@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Revisando o for</title>
+
+    <script>
+        //1.Peça um número e mostre todos os números de 1 até ele.
+        let numeroString = prompt("Por favor, digite um número:");
+        let numero = parseInt(numeroString, 10);
+        if (!isNaN(numero) && numero >= 1) {
+            document.write("Contando de 1 até " + numero + ":<br>");
+            for (let i = 1; i <= numero; i++) {
+                document.write(i + "<br>");
+            }
+        } else {
+            document.write("Entrada inválida. Por favor, digite um número inteiro maior ou igual a 1.");
+        }
+        //2.Peça um número e mostre a soma de 1 até ele.
+        const numero1 = parseInt(prompt('Digite um número inteiro e positivo:'));
+        if (isNaN(numero) || numero <= 0) {
+            console.log('Por favor, digite um número inteiro e positivo válido.');
+        } else {
+            const soma = (numero * (numero + 1)) / 2;
+            console.log(`A soma de 1 até ${numero} é: ${soma}`);
+            alert(`A soma de 1 até ${numero} é: ${soma}`);
+        }
+        //3.Peça um número e exiba apenas os pares até ele.
+        let userInput = prompt("Digite um número inteiro positivo:");
+        let maxNumber = parseInt(userInput, 10);
+
+        if (isNaN(maxNumber) || maxNumber < 0) {
+            console.log("Por favor, insira um número inteiro positivo válido.");
+        } else {
+            console.log(`Números pares até ${maxNumber}:`);
+            for (let i = 0; i <= maxNumber; i++) {
+                if (i % 2 === 0) {
+                    console.log(i);
+                }
+            }
+        }
+
+        //4.Peça um número e mostre sua tabuada de 1 a 10.
+        const numero2 = parseInt(prompt('Digite um número inteiro: '));
+        if (!isNaN(numero)) {
+            document.write(`<h2>Tabuada de multiplicação para ${numero}:</h2>`);
+            for (let i = 1; i <= 10; i++) {
+                const resultado = numero * i;
+                document.write(`${numero} * ${i} = ${resultado}<br>`);
+            }
+        } else {
+            document.write('Entrada inválida. Por favor, digite um número válido.');
+        }
+
+        //5.Peça 5 números e calcule a média.
+        let soma = 0;
+        let quantidade = 5;
+        for (let i = 1; i <= quantidade; i++) {
+            let numero = parseFloat(prompt(`Digite o ${i}º número:`));
+            if (isNaN(numero)) {
+                alert("Valor inválido! Por favor, digite um número.");
+                i--;
+            } else {
+                soma += numero;
+            }
+        }
+        let media = soma / quantidade;
+        alert(`A média dos números digitados é: ${media}`);
+        console.log(`A média dos números digitados é: ${media}`);
+        //6.Peça um número e faça uma contagem regressiva até 1.
+        let numero3 = parseInt(prompt("Digite um número para a contagem regressiva:"));
+        if (isNaN(numero3) || numero3 < 1) {
+            console.log("Por favor, digite um número válido maior que 0.");
+        } else {
+            console.log(`Contagem regressiva a partir de ${numero3}:`);
+            for (let i = numero3; i >= 1; i--) {
+                console.log(i);
+            }
+
+            console.log(" Fim da contagem!");
+        }
+        //7.Peça um número e calcule o fatorial dele.
+        let numero4 = parseInt(prompt("Digite um número para calcular o fatorial:"));
+        function fatorial(n) {
+            if (n < 0) {
+                return "Fatorial não definido para números negativos.";
+            }
+            let resultado = 1;
+            for (let i = 2; i <= n; i++) {
+                resultado *= i;
+            }
+            return resultado;
+        }
+        alert(`O fatorial de ${numero} é ${fatorial(numero)}`);
+        //8.Peça dois números e mostre todos os ímpares entre eles.
+        let inicio = parseInt(prompt("Digite o primeiro número:"));
+        let fim = parseInt(prompt("Digite o segundo número:"));
+        for (let i = inicio; i <= fim; i++) {
+            if (i % 2 !== 0) {
+                console.log(i);
+            }
+        }
+        //9.Peça 5 números e mostre o maior deles.
+        let maior = -Infinity;
+        for (let i = 1; i <= 5; i++) {
+            let num = parseFloat(prompt("Digite o número " + i + ":"));
+            if (num > maior) {
+                maior = num;
+            }
+        }
+        console.log("O maior número é:", maior);
+        //10.Mostre os primeiros N termos da sequência de Fibonacci.
+        let n = parseInt(prompt("Quantos termos da sequência de Fibonacci deseja ver?"));
+        let a = 0;
+        let b = 1;
+        console.log(a);
+        if (n > 1) {
+            console.log(b);
+        }
+        for (let i = 3; i <= n; i++) {
+            let prox = a + b;
+            console.log(prox);
+            a = b;
+            b = prox;
+        }
+
+    </script>
+    </body>
+
+    </html>
